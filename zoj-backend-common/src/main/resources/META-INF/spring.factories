@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.zuu.zojbackendcommon.config.JacksonConfig, \
+  com.zuu.zojbackendcommon.config.MybatisPlusConfig,\
+  com.zuu.zojbackendcommon.config.RedissonConfig

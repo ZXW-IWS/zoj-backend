@@ -1,0 +1,51 @@
+server:
+  port: 10001
+  servlet:
+    context-path: /api/user
+spring:
+  profiles:
+    #运行的环境
+    active: dev
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://${mysql.ip}:${mysql.port}/${mysql.dbname}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${mysql.username}
+    password: ${mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  data:
+    redis:
+      # Redis服务器地址
+      host: ${redis.host}
+      # Redis服务器端口号
+      port: ${redis.port}
+      # 使用的数据库索引，默认是0
+      database: ${redis.database}
+      # 设置密码
+      password: ${redis.password}
+  cloud:
+    nacos:
+      server-addr: ${nacos.ip}:${nacos.port}
+#开启mybatis-plus逻辑删除支持
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: codesandbox-service
+  cloud:
+    nacos:
+      server-addr: ${nacos.ip}:${nacos.port}
+  profiles:
+    active: dev
+server:
+  port: 10004
+  servlet:
+    context-path: /api/codesandbox

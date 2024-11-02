@@ -1,0 +1,7 @@
+nacos:
+  ip: localhost
+  port: 8848
+docker:
+  host: 182.92.80.155
+  port: 2375
+  java-ghost: openjdk:17.0

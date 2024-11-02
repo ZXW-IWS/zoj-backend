@@ -1,0 +1,17 @@
+###########mysql配置#################
+mysql:
+  username: root
+  password: root
+  ip: localhost
+  port: 3306
+  dbname: zoj
+##########redis配置##################
+redis:
+  host: localhost
+  port: 6379
+  database: 0
+  password: root
+
+nacos:
+  ip: localhost
+  port: 8848

@@ -1,0 +1,43 @@
+server:
+  port: 9191
+spring:
+  main:
+    web-application-type: reactive
+  profiles:
+    #运行的环境
+    active: dev
+  application:
+    name: gateway
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  cloud:
+    nacos:
+      server-addr: ${nacos.ip}:${nacos.port}
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+        - id: question-service
+          uri: lb://question-service
+          predicates:
+            - Path=/api/question/**
+        - id: judge-service
+          uri: lb://judge-service
+          predicates:
+            - Path=/api/judge/**
+        - id: codesandbox-service
+          uri: lb://codesandbox-service
+          predicates:
+            - Path=/api/codesandbox/**
+knife4j:
+  gateway:
+    enabled: true
+    # 指定服务发现的模式聚合微服务文档，并且是默认`default`分组
+    strategy: discover
+    discover:
+      enabled: true
+      # 指定版本号(Swagger2|OpenAPI3)
+      version : OpenAPI3
