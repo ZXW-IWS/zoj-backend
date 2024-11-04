@@ -18,11 +18,11 @@ import com.zuu.domain.vo.req.question.QuestionUpdateReq;
 public interface QuestionService extends IService<Question> {
     /**
      * 添加题目接口
-     * @param uid  创建人id
+     * @param token  创建人token
      * @param questionAddReq
      * @return
      */
-    Long addQuestion(Long uid, QuestionAddReq questionAddReq);
+    Long addQuestion(String token, QuestionAddReq questionAddReq);
 
     /**
      * 删除题目接口

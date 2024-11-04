@@ -40,9 +40,9 @@ public class QuestionController {
      * @return
      */
     @PutMapping("/add")
-    public BaseResponse<Long> addQuestion(@RequestBody QuestionAddReq questionAddReq) {
-        Long uid = RequestHolder.get();
-        Long questionId = questionService.addQuestion(uid,questionAddReq);
+    public BaseResponse<Long> addQuestion(@RequestBody QuestionAddReq questionAddReq,HttpServletRequest request) {
+        String token = request.getHeader(TOKEN_HEADER_KEY);
+        Long questionId = questionService.addQuestion(token,questionAddReq);
 
         return ApiResult.success(questionId);
     }

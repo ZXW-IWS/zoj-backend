@@ -2,7 +2,7 @@ package com.zuu.zojbackendjudge.factory;
 
 import com.zuu.domain.enums.CodeLanguageEnum;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackendjudge.strategy.JudgeHandleStrategy;
 
 import java.util.HashMap;

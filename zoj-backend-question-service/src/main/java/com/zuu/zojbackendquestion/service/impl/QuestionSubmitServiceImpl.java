@@ -16,14 +16,12 @@ import com.zuu.domain.vo.req.question_submit.QuestionSubmitReq;
 import com.zuu.zojbackendapi.client.JudgeFeignClient;
 import com.zuu.zojbackendapi.client.UserFeignClient;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackendquestion.mapper.QuestionSubmitMapper;
 import com.zuu.zojbackendquestion.service.QuestionService;
 import com.zuu.zojbackendquestion.service.QuestionSubmitService;
-import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

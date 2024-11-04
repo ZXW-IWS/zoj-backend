@@ -1,0 +1,68 @@
+version: '3'
+services:
+  zoj-backend-gateway:
+    container_name: zoj-backend-gateway
+    build:
+      context: ./zoj-backend-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "9191:9191"
+    networks:
+      - zojnetwork
+
+  zoj-backend-user-service:
+    container_name: zoj-backend-user-service
+    build:
+      context: ./zoj-backend-user-service
+      dockerfile: Dockerfile
+    ports:
+      - "10001:10001"
+    networks:
+      - zojnetwork
+    depends_on:
+      - zoj-backend-gateway
+
+  zoj-backend-codesandbox-service:
+    container_name: zoj-backend-codesandbox-service
+    build:
+      context: ./zoj-backend-codesandbox-service
+      dockerfile: Dockerfile
+    ports:
+      - "10004:10004"
+    networks:
+      - zojnetwork
+    depends_on:
+      - zoj-backend-gateway
+
+  zoj-backend-question-service:
+    container_name: zoj-backend-question-service
+    build:
+      context: ./zoj-backend-question-service
+      dockerfile: Dockerfile
+    ports:
+      - "10002:10002"
+    networks:
+      - zojnetwork
+    depends_on:
+      - zoj-backend-user-service
+      - zoj-backend-gateway
+      - zoj-backend-codesandbox-service
+
+  zoj-backend-judge-service:
+    container_name: zoj-backend-judge-service
+    build:
+      context: ./zoj-backend-judge-service
+      dockerfile: Dockerfile
+    ports:
+      - "10003:10003"
+    networks:
+      - zojnetwork
+    depends_on:
+      - zoj-backend-gateway
+      - zoj-backend-user-service
+      - zoj-backend-question-service
+      - zoj-backend-codesandbox-service
+
+# 网络，不定义的话就是默认网络
+networks:
+  zojnetwork:

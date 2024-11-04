@@ -28,7 +28,8 @@ spring:
       password: ${redis.password}
   cloud:
     nacos:
-      server-addr: ${nacos.ip}:${nacos.port}
+      discovery:
+        server-addr: ${nacos.ip}:${nacos.port}
 #开启mybatis-plus逻辑删除支持
 mybatis-plus:
   global-config:

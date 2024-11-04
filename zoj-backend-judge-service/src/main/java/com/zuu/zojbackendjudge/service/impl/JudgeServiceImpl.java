@@ -11,7 +11,7 @@ import com.zuu.domain.vo.req.sandbox.ExecuteCodeReq;
 import com.zuu.domain.vo.resp.sandbox.ExecuteCodeResp;
 import com.zuu.zojbackendapi.client.QuestionFeignClient;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackendjudge.codesandbox.factory.CodeSandBoxFactory;
 import com.zuu.zojbackendjudge.codesandbox.proxy.CodeSandBoxProxy;
 import com.zuu.zojbackendjudge.codesandbox.strategy.CodeSandBox;

@@ -3,7 +3,7 @@ package com.zuu.zojbackendjudge.codesandbox.factory;
 
 import com.zuu.domain.enums.CodeSandBoxEnum;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackendjudge.codesandbox.strategy.CodeSandBox;
 
 import java.util.HashMap;

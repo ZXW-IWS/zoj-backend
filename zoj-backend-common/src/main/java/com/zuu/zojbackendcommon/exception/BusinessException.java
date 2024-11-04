@@ -1,4 +1,4 @@
-package com.zuu.zojbackendcommon.exeption;
+package com.zuu.zojbackendcommon.exception;
 
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
 import lombok.Data;

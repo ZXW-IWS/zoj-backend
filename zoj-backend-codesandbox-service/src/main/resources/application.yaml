@@ -3,7 +3,8 @@ spring:
     name: codesandbox-service
   cloud:
     nacos:
-      server-addr: ${nacos.ip}:${nacos.port}
+      discovery:
+        server-addr: ${nacos.ip}:${nacos.port}
   profiles:
     active: dev
 server:

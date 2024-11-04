@@ -15,7 +15,7 @@ import com.zuu.domain.po.Question;
 import com.zuu.domain.vo.req.question.*;
 import com.zuu.zojbackendapi.client.UserFeignClient;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackendquestion.mapper.QuestionMapper;
 import com.zuu.zojbackendquestion.service.QuestionService;
 import com.zuu.zojbackendquestion.service.TagService;
@@ -47,15 +47,16 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question>
     /**
      * 添加题目接口
      *
-     * @param uid            创建人id
+     * @param token
      * @param questionAddReq
      * @return
      */
     @Override
-    public Long addQuestion(Long uid, QuestionAddReq questionAddReq) {
+    public Long addQuestion(String token, QuestionAddReq questionAddReq) {
         if (Objects.isNull(questionAddReq)) {
             throw new BusinessException(ErrorEnum.PARAM_ERROR);
         }
+        Long uid = userFeignClient.getIdByToken(token);
         List<String> tagList = questionAddReq.getTagList();
         JudgeConfig judgeConfig = questionAddReq.getJudgeConfig();
         List<JudgeCase> judgeCase = questionAddReq.getJudgeCase();

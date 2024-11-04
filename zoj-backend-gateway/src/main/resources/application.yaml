@@ -13,7 +13,8 @@ spring:
       write-dates-as-timestamps: true
   cloud:
     nacos:
-      server-addr: ${nacos.ip}:${nacos.port}
+      discovery:
+        server-addr: ${nacos.ip}:${nacos.port}
     gateway:
       routes:
         - id: user-service

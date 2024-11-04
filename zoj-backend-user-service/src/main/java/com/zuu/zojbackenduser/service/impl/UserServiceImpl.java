@@ -13,7 +13,7 @@ import com.zuu.domain.enums.UserRoleEnum;
 import com.zuu.domain.po.User;
 import com.zuu.zojbackendcommon.constant.RedisConstant;
 import com.zuu.zojbackendcommon.domain.ErrorEnum;
-import com.zuu.zojbackendcommon.exeption.BusinessException;
+import com.zuu.zojbackendcommon.exception.BusinessException;
 import com.zuu.zojbackenduser.mapper.UserMapper;
 import com.zuu.zojbackenduser.service.UserService;
 import lombok.RequiredArgsConstructor;
