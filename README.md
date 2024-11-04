@@ -52,6 +52,8 @@ create table user
     "output": x x
   }
 ]
+```
+```sql
 DROP TABLE IF EXISTS question;
 CREATE TABLE question
 (
